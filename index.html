@@ -16,5 +16,34 @@
       <a href="#" id="btn">Play</a>
       <img src="images/mountains_front.png" id="mountains_front" />
     </section>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+      integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      var animation = anime.timeline({
+        autoplay: false,
+      });
+
+      animation
+        .add({
+          targets: '#btn',
+          top: '100px',
+          duration: 500,
+          easing: 'easeInOutSine',
+        })
+
+        .add({
+          targets: '#stars',
+          top: '0px',
+          duration: 1000,
+          easing: 'easeInOutSine',
+        });
+
+      document.querySelector('#btn').onclick = animation.play;
+    </script>
   </body>
 </html>
